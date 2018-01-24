@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="name of author">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	<link rel="shortcut icon" href="img/icon.ico"/>
+	<title>EL |3OOK</title>
+	<!--подключение JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<!--подключение библиотеки ползунка--> 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!--скрипт ползунка-->
+	<script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 150,
+      values: [ 2, 20 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+  </script>
+</head>
+<body>
+	<!--Обвертка-->
+	<a id="home-link" href="#"></a>
+	<div id="wrapper">
+		<!--шапка с соц сетями-->
+		<div class="panel-top">
+			<!--центральный слой по 960-->
+			<div class="center clearfix">
+				<div class="social">
+					<a href="#" target="_blank" class="s-fb">&nbsp;</a>
+					<a href="#" target="_blank" class="s-dribble">&nbsp;</a>
+					<a href="#" target="_blank" class="s-tw">&nbsp;</a>
+					<a href="#" target="_blank" class="s-mail">&nbsp;</a>
+					<a href="#" target="_blank" class="s-vimeo">&nbsp;</a>
+				</div>
+				<!--корзина-->
+				<div class="basket">
+					<a href="#"><span>Card(3)</span></a>
+				</div>
+				<!--регистрация-->
+				<div class="login">
+					<a href="#">Login</a>
+					<span>/</span>
+					<a href="#">Register</a>
+				</div> 
+			</div>
+		</div>
+		<!--логотип и навигация-->
+		<div id="header" class="center clearfix">
+			<!--логотип-->
+			<div id="logo" class="left">
+				<a href="#">
+					<img src="img/logo.png" height="75" width="75" alt="">
+					<span>Store</span>
+				</a>
+			</div>
+			<!--навигация-->
+			<ul class="nav right clearfix">
+				<li><a href="/">Home</a></li>
+				<li><a href="#">Books</a></li>
+				<li><a href="#">Magazines</a></li>
+				<li><a href="#">Delivery</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>	
+		</div>
+		<!--красный блок с хлебными крошками-->
+		<div id="home">
+			<div class="home-bg">
+				<div class="center">
+					<a href="/" class="link-home">&nbsp;</a>
+					<h2 class="title-home">Books - The Beats</h2>
+					<ul class="breadcrumbs clearfix"> 
+						<li><a href="#">Home</a><span class="sp">&raquo;</span></li>
+						<li><a href="#">Books</a><span class="sp">&raquo;</span></li>
+						<li><span>The Beats</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--сортировка-->
+		<div class="sorting center clearfix">
+			<ul class="s-category clearfix">
+				<li><a href="#">All</a></li>
+				<li><a href="#">Lost Generation</a></li>
+				<li class="active"><a href="#">The Beats</a></li>
+				<li><a href="#">Classic</a></li>
+				<li><a href="#">Science Fiction</a></li>
+				<li><a href="#">Modern</a></li>
+			</ul>
+			<div class="s-list">
+				<a href="#" class="ic-squares">&nbsp;</a>
+				<a href="#" class="ic-list">&nbsp;</a>
+			</div>
+			<div class="sel-sorting">
+				<span>Sort by:</span>
+				<select name="" id="">
+					<option value="alphabetically">alphabetically</option>
+					<option value="by genres">by genres</option>
+					<option value="by authors">by authors</option>
+					<option value="by ages">by ages</option>
+					<option value="by styles">by styles</option>
+					<option value="by name">by name</option>
+					<option value="by title">by title</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="middle clearfix center">
+			<!--меню справа с популярными товарами-->
+			<div class="sidebar">
+				<!--скрол на JS-->
+				<h4 class="s-title">Price Filter<span class="s-title-br"></span></h4>
+				<!--скрипт для ползунка из библиотеки JQuery-->
+				<p>
+  					<label for="amount">Price:</label>
+  					<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  					<button class="btn-bl">Filter</button>
+				</p>
+ 
+				<div id="slider-range"></div>
+				<!--хиты продаж-->
+				<h4 class="s-title">Best Sellers<span class="s-title-br"></span></h4>
+				<div class="s-products">
+					<div class="s-products-item clearfix">
+						<div class="s-products-img">
+							<a href="#"><img src="img/pics/arms.jpg" alt=""/></a>
+						</div>
+						<div class="s-products-info">
+							<h6><a href="#">Farewell To Arms </a></h6>
+							<div class="rate">
+								<div style="width: 80%"></div>
+							</div>
+							<span class="comments"><i class="ic-comment"></i> 122 comments</span>
+						</div>
+					</div>
+					<div class="s-products-item clearfix">
+						<div class="s-products-img">
+							<a href="#"><img src="img/pics/fury.jpg" alt=""/></a>
+						</div>
+						<div class="s-products-info">
+							<h6><a href="#">The Sound And The Fury </a></h6>
+							<div class="rate">
+								<div style="width: 80%"></div>
+							</div>
+							<span class="comments"><i class="ic-comment"></i> 88 comments</span>
+						</div>
+					</div>
+				</div>
+				<!--еще катагории справа в сайдбаре-->
+				<h4 class="s-title">our Categories<span class="s-title-br"></span></h4>
+				<ul class="cat-list">
+					<li><span class="this">&raquo;</span><a href="#"> English Literature</a><span class="it"> (19)</span></li>
+					<li><span class="this">&raquo;</span><a href="#"> Spanish Literature</a><span class="it"> (5)</span></li>
+					<li><span class="this">&raquo;</span><a href="#"> Italian Literature</a><span class="it"> (3)</span></li>
+					<li><span class="this">&raquo;</span><a href="#"> German Literature</a><span class="it">	(28)</span></li>
+					<li><span class="this">&raquo;</span><a href="#"> Arabic Literature</a><span class="it"> (2)</span></li>
+					<li><span class="this">&raquo;</span><a href="#"> Russian Literature</a><span class="it"> (88)</span></li>
+				</ul>
+				<!--поиск по сайту-->
+				<h4 class="s-title">Search our books<span class="s-title-br"></span></h4>
+				<form action="#" class="s-search">
+					<input type="text" placeholder="Search for books here..."/>
+					<input type="submit" value=""/>
+				</form>
+			</div>
+			<!--Основной контент, основные продукты на странице-->
+			<!--1 продукт Вопль-->
+			<div class="content">
+				<div class="product-catalog clearfix">
+					<div class="products">
+						<div class="p-img">
+							<span class="sale">Sale</span>
+							<a href="#"><img src="img/pics/howl.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">Howl </a><span>by Allen Ginsberg</span></h6>
+							<div class="rate">
+								<div style="width: 50%"></div>
+							</div>
+							<p><strong>"Howl"</strong>, also known as "Howl for Carl Solomon", is a poem written by Allen Ginsberg in 1954-1955 and published in his 1956 collection Howl and Other Poems. The poem is dedicated to Carl Solomon.</p>
+							<div class="p-footer-price clearfix">
+								<span class="price">20.99$</span>
+								<span class="price-new">7.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+					<!--2 продукт завтрак Нагишом-->
+					<div class="products">
+						<div class="p-img">
+							<a href="#"><img src="img/pics/naked.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">Naked Lunch </a><span>by William S. Burroughs</span></h6>
+							<div class="rate">
+								<div style="width: 80%"></div>
+							</div>
+							<p><strong>"Naked Lunch"</strong>is a novel by American writer William S. Burroughs, originally published in 1959. The book is structured as a series of loosely connected vignettes.</p>
+							<div class="p-footer-price clearfix">
+								<span class="oldprice">11.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+					<!--3 продукт завтрак В дороге-->
+					<div class="products">
+						<div class="p-img">
+							<a href="#"><img src="img/pics/road.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">On The Road </a><span>by Jack Kerouac</span></h6>
+							<div class="rate">
+								<div style="width: 100%"></div>
+							</div>
+							<p>The idea for <strong>"On The Road"</strong>, Kerouac's second novel, was formed during the late 1940s in a series of notebooks, and then typed out on a continuous reel of paper during three weeks in April 1951.</p>
+							<div class="p-footer-price clearfix">
+								<span class="oldprice">20.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+					<!--4 продукт завтрак Кен Кизи-->
+					<div class="products">
+						<div class="p-img">
+							<a href="#"><img src="img/pics/ken.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">One Flew Over the Cuckoo's Nest  </a><span>by Ken Kesey</span></h6>
+							<div class="rate">
+								<div style="width: 80%"></div>
+							</div>
+							<p>Time magazine included the novel in its "100 Best English-language Novels from 1923 to 2005" list. In 2003 the book was listed on the BBC's The Big Read poll of the UK's 200 "best-loved novels.".</p>
+							<div class="p-footer-price clearfix">
+								<span class="oldprice">23.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+					<!--5 продукт завтрак Джанки-->
+					<div class="products">
+						<div class="p-img">
+							<span class="sale">Sale</span>
+							<a href="#"><img src="img/pics/junk.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">Junkie </a><span>by William S. Burroughs</span></h6>
+							<div class="rate">
+								<div style="width: 70%"></div>
+							</div>
+							<p><strong>"Junkie"</strong>, is an American novel by published initially under the pseudonym William Lee in 1953. His first published work, it is semi-autobiographical and focuses on Burroughs' life as a drug user and dealer.</p>
+							<div class="p-footer-price clearfix">
+								<span class="price">20.99$</span>
+								<span class="price-new">7.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+					<!--6 продукт завтрак Почтампт-->
+					<div class="products">
+						<div class="p-img">
+							<a href="#"><img src="img/pics/post.jpg" height="220" width="220" alt=""/></a>
+						</div>
+						<div class="p-footer">
+							<h6><a href="#">Post Office </a><span>by Charles Bukowski</span></h6>
+							<div class="rate">
+								<div style="width: 80%"></div>
+							</div>
+							<p><strong>"Post Office"</strong>,  is the first novel written by Charles Bukowski, published in 1971 when he was 50 years old.<pre>
+							</pre></p>
+							<div class="p-footer-price clearfix">
+								<span class="oldprice">15.99$</span>
+								<a href="#" class="right add-card">Add to card</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--пагинация-->
+				<div class="pagination">
+					<ul class="clearfix">
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!--прижатый футер-->
+	<div id="footer">
+		<a href="#home-link" class="home-link">&nbsp;</a>
+		<div class="center clearfix">
+			<!--О нас-->
+			<div class="f-about">
+				<h5 class="f-title">Little about us</h5>
+				<p>We are open <b>7 days a week</b> from 10 AM to 8 PM 
+				and you can pursue your book through our site 
+				online anytime. </p>	
+				<h5 class="f-title">Socialize with us</h5>
+			<!--соц сети в футере-->	
+			<div class="f-social">
+				<a href="#" target="_blank" class="s-fb">&nbsp;</a>
+				<a href="#" target="_blank" class="s-tw">&nbsp;</a>
+				<a href="#" target="_blank" class="s-dribble">&nbsp;</a>
+				<a href="#" target="_blank" class="s-digg">&nbsp;</a>
+				<a href="#" target="_blank" class="s-mail">&nbsp;</a>
+			</div>
+			</div>
+			<!--наш архив записей по месяцам-->
+			<div class="f-archives">
+				<h5 class="f-title">Our Archives</h5>
+				<ul class="f-list">
+					<li><a href="#">December 2017</a></li>
+					<li><a href="#">November 2017</a></li>
+					<li><a href="#">October 2017</a></li>
+					<li><a href="#">September 2017</a></li>
+				</ul>
+			</div>
+			<!--самое популярное-->
+			<div class="f-populars">
+				<h5 class="f-title">Popular Books</h5>
+				<div class="s-products-item clearfix">
+						<div class="s-products-img">
+							<a href="#"><img src="img/pics/foer.jpg" alt=""/></a>
+						</div>
+						<div class="s-products-info">
+							<h6><a href="#">Everything Is Illuminated </a></h6>
+							<span class="comments"><i class="ic-comment-white"></i> 1  380 comments</span>
+						</div>
+					</div>
+					<div class="s-products-item clearfix">
+						<div class="s-products-img">
+							<a href="#"><img src="img/pics/rum.jpg" alt=""/></a>
+						</div>
+						<div class="s-products-info">
+							<h6><a href="#">The Rum Diary </a></h6>
+							<span class="comments"><i class="ic-comment-white"></i> 3 417 comments</span>
+						</div>
+					</div>
+				</div>
+				<!--поиск в футере по сайту-->
+				<div class="f-search">
+					<h5 class="f-title">Search Through Our Site</h5>
+					<form action="#">
+						<input type="text" class="f-search-inp" placeholder="Enter Search..." />
+					</form>
+					<!--облако тэгов в футере-->
+					<h5 class="f-title">Tag Cloud</h5>
+					<a href="#" class="tags">Gonzo</a>
+					<a href="#" class="tags">Beats</a>
+					<a href="#" class="tags">Nobel Prize</a>
+					<a href="#" class="tags">Hippie</a>
+					<a href="#" class="tags">Culture</a>
+					<a href="#" class="tags">American's Literature</a>
+					<a href="#" class="tags">20th Century</a>
+					<a href="#" class="tags">21th Century</a>
+				</div>
+			</div>
+			<!--самая нижня часть под футером-->
+			<div class="footer-bottom">
+				<div class="center">
+				<a href="#">Home</a>
+				<a href="#">Delivery</a>
+				<a href="#">Vacancies</a>
+				<a href="#">Contact</a>
+				<p class="right">Books @2017 by MatthewFredberg@gmail.com | All Rights Reserved</p>    	
+				</div>
+			</div>	
+	</div>
+</body>
+</html>	
